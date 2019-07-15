@@ -1,18 +1,13 @@
 import datetime
 from mailer import sendClass as sc
+from path import pathClass as pc
 
 
 class detailClass():
     user_details = []
     email_details = []
     messages = []
-    base_msg = """Hi {name}! 
-Thank you for the purchase on {date}. 
-We hope you are exicted about using it. Just as a
-reminder the purcase total was ${total}.
-Have a great one!
-Team CFE
-"""
+    base_msg = pc.getTemplate()
 
     def add_user(self, name, amount, email=None):
         name = name[0].upper()+name[1:].lower()
